@@ -11,3 +11,4 @@ def solution(phone_book):
     return answer # answer 리턴
   
   # 이 외에도 "스트링.startswith" 함수나 for p1, p2 in zip(phoneBook, phoneBook[1:]) 등으로 풀 수도 있다.
+
