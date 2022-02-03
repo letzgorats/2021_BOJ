@@ -1,4 +1,4 @@
-# 정확성 테스트 하나 빼고 다 맞은 풀이 - 너무 복잡하게 풀었다.
+# 정확성 테스트 하나 빼고 다 맞은 풀이 - 너무 복잡하게 풀었다. - 계수정렬로 풀어보자 내일
 from itertools import combinations, permutations
 
 def solution(clothes):
