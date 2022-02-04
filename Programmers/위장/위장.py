@@ -30,3 +30,26 @@ def solution(clothes):
             answer += now
     
     return answer
+
+
+# 작년에도 (백준-패션왕 신해빈 문제랑 똑같은 문제) 풀었던 문제다. 해쉬 생각하니까 풀린다.
+
+def solution(clothes):
+    answer = 1
+    category = {}
+    clothes = sorted(clothes,key = lambda x : x[1])
+    print(clothes)
+    for x in clothes:
+        if x[1] in category:
+            category[x[1]] += 1
+        else:
+            category[x[1]] = 1
+    # print(category)
+    count_list = []
+    for i in category.values():
+        count_list.append(i)
+    # print(count_list)
+    for i in count_list:
+        answer *= (i+1)
+    answer -= 1 
+    return answer
