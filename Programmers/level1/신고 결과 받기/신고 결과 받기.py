@@ -34,3 +34,33 @@ def solution(id_list, report, k):
                 real_answer[j.split()[0]] += 1
     
     return list(real_answer.values())
+
+
+## 2
+def solution(id_list, report, k):
+    answer = []
+    report_set = set(report)
+    how_many = {}
+    answer = {}
+    for i in id_list:
+        if i not in how_many:
+            how_many[i] = 0
+            answer[i] = 0
+
+    for r in report_set:
+        a = r.split()[0]
+        b = r.split()[1]
+        how_many[b] += 1
+        # if how_many[b] >= k:
+    # print(how_many)
+    
+    for B,v in how_many.items():
+        if v >= k:
+            # print(B)
+            for AB in report_set :
+                # print(AB)
+                if AB.split()[1] == B:
+                    answer[AB.split()[0]] += 1
+                    # print(answer)
+    answer = list(answer.values())
+    return answer
