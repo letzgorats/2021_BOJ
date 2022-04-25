@@ -1,3 +1,6 @@
+## 1
+- 20.8 / 100.0
+
 from collections import defaultdict
 
 def solution(id_list, report, k):
@@ -37,6 +40,8 @@ def solution(id_list, report, k):
 
 
 ## 2
+- 87.5 / 100.0
+
 def solution(id_list, report, k):
     answer = []
     report_set = set(report)
@@ -64,3 +69,33 @@ def solution(id_list, report, k):
                     # print(answer)
     answer = list(answer.values())
     return answer
+
+## 3
+- 91.7 / 100.0
+
+from collections import defaultdict 
+
+def solution(id_list, report, k):
+    
+    report = list(set(report))  # 중복 제거
+    # print(report)
+    
+    be_reported = defaultdict(int)
+    real_stopped = []
+    for singo in report:
+        a = singo.split()[0]    # 신고자
+        b = singo.split()[1]    # 신고당한 사람
+        be_reported[b] += 1
+        if be_reported[b] == k:
+            real_stopped.append(b)
+    # print(real_stopped)
+    # print(be_reported)
+    answer = [0] * len(id_list)
+    
+    for b in real_stopped:
+        for a in report:
+            if b == a.split()[1]:
+                answer[id_list.index(a.split()[0])] += 1
+
+    return answer
+
