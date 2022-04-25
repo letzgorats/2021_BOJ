@@ -99,3 +99,27 @@ def solution(id_list, report, k):
 
     return answer
 
+##4
+- 100.0 / 100.0
+
+def solution(id_list, report, k):
+    
+    report = list(set(report))  # 중복 제거
+    
+    # 신고당한사람의 누적 신고 횟수를 나타내는 id: 횟수 딕셔너리 초기화
+    be_reported = {id : 0 for id in id_list} 
+    
+    for singo in report:
+        b = singo.split()[1]    # 신고당한사람
+        be_reported[b] += 1
+    
+    answer = [0] * len(id_list)
+    
+    # 신고자와 신고된 사람 짝을 나타내는 report에서 
+    for singo in report:
+         # 신고당한 사람의 누적 신고 횟수가 k이상이라면
+        if be_reported[singo.split()[1]] >= k: 
+            # 신고한 사람에게 메일발송 1회
+            answer[id_list.index(singo.split()[0])] += 1
+            
+    return answer
