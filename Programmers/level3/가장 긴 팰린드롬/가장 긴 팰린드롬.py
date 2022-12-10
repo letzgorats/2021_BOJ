@@ -1,0 +1,12 @@
+def solution(s):
+    answer = 1
+    
+    for i in range(len(s)):
+        for j in range(1,len(s)+1):
+            if len(s[i:j]) < answer:
+                continue
+            if s[i:j] == s[i:j][::-1]:
+                answer = max(answer, len(s[i:j]))
+ 
+ 
+    return answer
