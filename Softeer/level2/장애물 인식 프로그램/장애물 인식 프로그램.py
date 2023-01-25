@@ -44,3 +44,9 @@ for i in range(N):
 print(len(answer_list))
 for a in sorted(answer_list):
     print(a)
+
+    
+    
+    
+# DFS 로 푸는 풀이 
+sys.setrecursionlimit(10**7) # 재귀사용할때 사용할 수 있으면 위에다 박아놓자
